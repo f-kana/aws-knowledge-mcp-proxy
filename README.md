@@ -2,23 +2,26 @@
 
 ## 概要 (Overview )
 
-AWS公式の`aws-knowledge-mcp-server`がプロキシ環境下で動作しないため、
+AWS公式のAWS Knowledge MCP Server (`aws-knowledge-mcp-server`) がプロキシ環境下で動作しないため、
 プロキシ対応可能なClientとして実装した。
 公式とセットアップ方法が異なるが、使い方は同じなので、[公式のWebサイト](https://awslabs.github.io/mcp/servers/aws-knowledge-mcp-server)を参照のこと。
 
-Since the official AWS `aws-knowledge-mcp-server` does not work in proxy environments,
+Since the official AWS Knowledge MCP Server (`aws-knowledge-mcp-server`) does not work in proxy environments,
 this has been implemented as a proxy-capable client.
-The setup method differs from the official one, but the usage is the same, so please refer to the [official website](https://awslabs.github.io/mcp/servers/aws-knowledge-mcp-server).
+The setup method differs from the official one, but the usage is the same, so please refer to the [AWS Knowledge MCP Server official website](https://awslabs.github.io/mcp/servers/aws-knowledge-mcp-server).
 
 ## セットアップ (Setup)
 
 ### 1. ソースコードをローカルに置く
 
-`git clone xxx`など。
+```sh
+cd {Your Working Dir}
+git clone https://github.com/f-kana/aws-knowledge-mcp-proxy.git
+```
 
 ### 2. 依存関係のインストール
 
-```bash
+```sh
 cd aws-knowledge-server-proxy
 npm install
 ```
@@ -27,7 +30,7 @@ npm install
 
 `.amazonq/mcp.json` または `.cursor/mcp.json` に以下を追加：
 
-**方法1: 環境変数を直接指定（推奨）**
+### 方法1: 環境変数を直接指定（推奨）
 
 ```json
 {
@@ -52,9 +55,10 @@ npm install
 }
 ```
 
-**方法2: システム環境変数を使用**
+### 方法2: システム環境変数を使用
 
 システムレベルで環境変数を設定している場合、`env`セクションは省略可能です：
+
 ```bash
 # ~/.bashrc
 export HTTP_PROXY=http://proxy.example.com:8080
