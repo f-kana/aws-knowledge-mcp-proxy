@@ -1,0 +1,17 @@
+{
+  "name": "aws-knowledge-mcp-proxy",
+  "version": "1.0.0",
+  "description": "To use official AWS Knowledge MCP Server with proxy support",
+  "type": "module",
+  "keywords": [
+    "mcp",
+    "aws",
+    "documentation",
+    "proxy"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.4",
+    "https-proxy-agent": "^7.0.5"
+  }
+}
