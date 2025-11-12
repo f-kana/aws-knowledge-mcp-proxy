@@ -1,16 +1,5 @@
 #!/usr/bin/env node
 
-/**
- * AWS Knowledge MCP Server Proxy Wrapper
- * 
- * 公式サーバー（https://knowledge-mcp.global.api.aws）にプロキシ経由でアクセスするラッパー
- * 
- * 環境変数から自動的にプロキシ設定を読み取ります:
- * - HTTP_PROXY
- * - HTTPS_PROXY
- * - NO_PROXY
- */
-
 import { Server } from '@modelcontextprotocol/sdk/server/index.js';
 import { StdioServerTransport } from '@modelcontextprotocol/sdk/server/stdio.js';
 import {
