@@ -10,6 +10,17 @@ Since the official AWS Knowledge MCP Server (`aws-knowledge-mcp-server`) does no
 this has been implemented as a proxy-capable client.
 The setup method differs from the official one, but the usage is the same, so please refer to the [AWS Knowledge MCP Server official website](https://awslabs.github.io/mcp/servers/aws-knowledge-mcp-server).
 
+### 前提条件 (Prerequisites)
+
+* Node.js
+
+### 動作確認済 (Tested on)
+
+* MacOS Ventura 15.0.1
+  * Node.js v20.11.1
+  * Cursor v2.x
+  * VS Code + Amazon Q Developer
+
 ## セットアップ (Setup)
 
 ### 1. ソースコードをローカルに置く
@@ -28,17 +39,17 @@ npm install
 
 ### 3. MCP設定ファイルの更新
 
-`.amazonq/mcp.json` または `.cursor/mcp.json` に以下を追加：
+`.amazonq/mcp.json` や `.cursor/mcp.json` などに以下を追加：
 
 ### 方法1: 環境変数を直接指定（推奨）
 
 ```json
 {
   "mcpServers": {
-    "aws-knowledge-mcp-server-proxy": {
+    "aws-knowledge-mcp-proxy": {
       "command": "node",
       "args": [
-        "/path/to/aws-knowledge-server-proxy/index.js"
+        "/path/to/aws-knowledge-mcp-proxy/index.js"
       ],
       "env": {
         "HTTP_PROXY": "http://proxy.example.com:8080",
@@ -48,9 +59,6 @@ npm install
       "timeout": 60000,
       "disabled": false
     }
-  },
-  "toolsPermissions": {
-    "@aws-knowledge-mcp-server-proxy/*": "Always allow"
   }
 }
 ```
@@ -86,3 +94,7 @@ export NO_PROXY=localhost,127.0.0.1
 ## ライセンス (License)
 
 MIT
+
+## Author
+
+[f-kana](https://github.com/f-kana)
