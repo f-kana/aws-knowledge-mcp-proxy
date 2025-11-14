@@ -89,7 +89,10 @@ export NO_PROXY=localhost,127.0.0.1
 }
 ```
 
-なお、MCPツール名を"aws-knowledge-mcp-server-proxy"のようにすると、ツール名+Function名が制限である60文字を越えるらしく、警告が出る。
+## 備考
+
+* プロキシを使わない場合は設定JSONから`"HTTP_PROXY": "http://proxy.example.com:8080"`等を削除する（この場合、環境変数のHTTP_PROXYが使われる、環境変数未設定ならPROXY無しになる）。
+* *MCPツール名を"aws-knowledge-mcp-server-proxy"のようにすると、ツール名+Function名が制限である60文字を越えるらしく、警告が出る。
 
 ## ライセンス (License)
 
